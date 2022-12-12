@@ -1,0 +1,28 @@
+{
+    "author": "sidestream-tech <sidebase@sidestream.tech>",
+    "bugs": {
+        "url": "https://github.com/sidebase/core/issues/new"
+    },
+    "homepage": "https://github.com/sidebase/core",
+    "name": "@sidebase/core",
+    "version": "0.1.1",
+    "license": "MIT",
+    "type": "module",
+    "main": "./nuxt.config.ts",
+    "files": [
+        "nuxt.config.ts",
+        "components/TheWelcome.vue",
+        "components/TheWelcomeContainer.vue"
+    ],
+    "scripts": {
+        "dev": "nuxt dev",
+        "build": "npm run build",
+        "lint": "eslint ."
+    },
+    "devDependencies": {
+        "@huntersofbook/naive-ui-nuxt": "^0.5.1",
+        "@nuxtjs/eslint-config-typescript": "^12.0.0",
+        "eslint": "^8.29.0",
+        "nuxt": "^3.0.0"
+    }
+}
