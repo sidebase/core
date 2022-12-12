@@ -11,6 +11,7 @@ This is the core sidebase Nuxt 3 layer. The layer adds sidebase basics to a proj
 
 Checkout the documentation here: https://sidebase.io/sidebase
 
+![sidebase](https://raw.githubusercontent.com/sidebase/core/main/.github/sidebase.png)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@sidebase/core/latest.svg
