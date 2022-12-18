@@ -19,4 +19,5 @@ jobs:
           node-version: 16.14.2
 
       - run: npm ci
+      - run: npx nuxt prepare
       - run: npm run lint
