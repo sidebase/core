@@ -12,14 +12,14 @@
     "files": [
         "nuxt.config.ts",
         "components/TheWelcome.vue",
-        "components/TheWelcomeContainer.vue"
+        "components/TheWelcomeContainer.vue",
+        "components/TimelineItem.vue"
     ],
     "scripts": {
         "dev": "nuxt prepare && nuxt dev",
         "lint": "eslint ."
     },
     "devDependencies": {
-        "@huntersofbook/naive-ui-nuxt": "^0.5.1",
         "@nuxtjs/eslint-config-typescript": "^12.0.0",
         "eslint": "^8.29.0",
         "nuxt": "^3.0.0"
