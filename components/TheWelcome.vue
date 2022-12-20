@@ -48,14 +48,18 @@ const parsedHealthCheckData = computed(() => {
       <p class="my-4">
         The data you see below is fetched from an API that is connected to a running database.
       </p>
-      <NTimeline v-if="parsedHealthCheckData">
-        <NTimelineItem type="success" :title="`Server v${parsedHealthCheckData.nuxtAppVersion} initialized`" />
-        <NTimelineItem type="success" :title="`Started at ${parsedHealthCheckData.startupTime.toLocaleString()}`" />
-        <NTimelineItem type="info" title="Healthy" :content="`Last checked at ${parsedHealthCheckData.time.toLocaleString()}`" />
-      </NTimeline>
-      <NTimeline v-else>
-        <NTimelineItem type="error" title="Server initialization failed" :content="`Last checked at ${lastRefreshedAt?.toLocaleString() || 'N/A'}`" />
-      </NTimeline>
+      <ol v-if="parsedHealthCheckData" class="border-l border-gray-300">
+        <TimelineItem border-color="border-green-500" :title="`Server v${parsedHealthCheckData.nuxtAppVersion} initialized`" />
+        <TimelineItem border-color="border-green-500" :title="`Started at ${parsedHealthCheckData.startupTime.toLocaleString()}`" />
+        <TimelineItem border-color="border-blue-500" title="Healthy" :content="`Last checked at ${parsedHealthCheckData.time.toLocaleString()}`" />
+      </ol>
+      <ol v-else class="border-l border-gray-300">
+        <TimelineItem
+          border-color="border-red-500"
+          title="Server initialization failed"
+          :content="`Last checked at ${lastRefreshedAt?.toLocaleString() || 'N/A'}`"
+        />
+      </ol>
       <p class="my-4">
         The above status is updated every couple seconds. DB, App and Server all start with a single command: <b>npm run dev</b>.
       </p>
@@ -68,7 +72,7 @@ const parsedHealthCheckData = computed(() => {
 
 <style>
 .GradientText {
-  background: linear-gradient(to right, #81F6D4 10%, #12a87b 40%, #0FCF97 60%, #81F6D4 90%);
+  background: linear-gradient(to right, #5eaa95 10%, #12a87b 40%, #0FCF97 60%, #5eaa95 90%);
   background-size: 200% auto;
 
   color: #000;
@@ -78,10 +82,10 @@ const parsedHealthCheckData = computed(() => {
   -webkit-text-fill-color: transparent;
 
   animation: shine 1s linear infinite;
-  @keyframes shine {
-    to {
-      background-position: 200% center;
-    }
+@keyframes shine {
+  to {
+    background-position: 200% center;
   }
+}
 }
 </style>
