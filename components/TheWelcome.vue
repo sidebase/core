@@ -36,11 +36,11 @@ const parsedHealthCheckData = computed(() => {
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center">
+  <div class="TheWelcome">
     <Head>
       <Title>sidebase</Title>
     </Head>
-    <div class="flex w-4/6 max-w-lg flex-col">
+    <div class="container">
       <h1 class="text-4xl">
         Welcome to <a href="https://github.com/sidebase/sidebase" target="_blank" class="GradientText">sidebase</a>!
       </h1>
@@ -48,12 +48,12 @@ const parsedHealthCheckData = computed(() => {
       <p class="my-4">
         The data you see below is fetched from an API that is connected to a running database.
       </p>
-      <ol v-if="parsedHealthCheckData" class="border-l border-gray-300">
+      <ol v-if="parsedHealthCheckData" class="TimeLine">
         <TimelineItem border-color="border-green-500" :title="`Server v${parsedHealthCheckData.nuxtAppVersion} initialized`" />
         <TimelineItem border-color="border-green-500" :title="`Started at ${parsedHealthCheckData.startupTime.toLocaleString()}`" />
         <TimelineItem border-color="border-blue-500" title="Healthy" :content="`Last checked at ${parsedHealthCheckData.time.toLocaleString()}`" />
       </ol>
-      <ol v-else class="border-l border-gray-300">
+      <ol v-else class="TimeLine">
         <TimelineItem
           border-color="border-red-500"
           title="Server initialization failed"
@@ -71,6 +71,36 @@ const parsedHealthCheckData = computed(() => {
 </template>
 
 <style>
+.TheWelcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 66.666667%;
+  max-width: 32rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.TimeLine {
+  border-left-width: 1px;
+  border-color: #D1D5DB;
+
+}
+
 .GradientText {
   background: linear-gradient(to right, #5eaa95 10%, #12a87b 40%, #0FCF97 60%, #5eaa95 90%);
   background-size: 200% auto;
