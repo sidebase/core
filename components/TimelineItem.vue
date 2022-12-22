@@ -17,12 +17,54 @@ defineProps({
 
 <template>
   <li>
-    <div class="flex flex-start items-center pt-3">
-      <div :class="borderColor" class="-ml-2 mr-3 h-4 w-4 rounded-full border-2 bg-white"></div>
-      <h4 class="mb-[1px] font-semibold text-gray-800">{{ title }}</h4>
+    <div class="top">
+      <div :class="borderColor" class="icon" />
+      <h4 class="title">{{ title }}</h4>
     </div>
-    <div v-if="content" class="ml-[21px]">
-      <p class="text-gray-500 text-sm">{{ content }}</p>
+    <div v-if="content" style="margin-left: 21px">
+      <p class="content">{{ content }}</p>
     </div>
   </li>
 </template>
+
+<style scoped>
+.top {
+  display: flex;
+  padding-top: 0.75rem;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.75rem;
+  margin-left: -0.5rem;
+  background-color: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border-width: 2px;
+}
+
+.border-blue-500 {
+  border-color: #3B82F6;
+}
+
+.border-green-500 {
+  border-color: #10B981;
+}
+
+.border-red-500 {
+  border-color: #EF4444;
+}
+
+.title {
+  color: #1F2937;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+
+.content {
+  color: #6B7280;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+</style>
